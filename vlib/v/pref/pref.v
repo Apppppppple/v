@@ -475,7 +475,7 @@ pub fn parse_args(known_external_commands []string, args []string) (&Preferences
 					eprintln('Use `v $arg` instead.')
 					exit(1)
 				}
-				if arg[0] == `-` {
+				if arg.len >= 2 && arg[0] == `-` {
 					if arg[1..] in pref.list_of_flags_with_param {
 						// skip parameter
 						i++
